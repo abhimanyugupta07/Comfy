@@ -33,8 +33,7 @@ public class Comfy {
   }
 
   public static void main(String[] args) {
-    ComfyConfig config = Comfy
-        .loadConfig("/Users/abhgupta/Desktop/workspace/comfy/config.ini", new String[] { "production", "ubuntu" });
+    ComfyConfig config = Comfy.loadConfig(args[0], new String[] { "production", "ubuntu" });
 
     System.out
         .println("config.get(\"common\").getIntValue(\"paid_users_size_limit\") = "

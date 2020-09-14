@@ -38,7 +38,7 @@ These get methods throw `ClassCastException` if an invalid conversion is attempt
 
 To test the functionality of Comfy, Comfy Jar comes with a main class and can be run as follows:
 
-	java -jar target/comfy-0.0.1-SNAPSHOT.jar 
+	java -jar target/comfy-0.0.1-SNAPSHOT.jar /Users/abhgupta/Desktop/workspace/comfy/config.ini
 	
 ### Sample Output
 
