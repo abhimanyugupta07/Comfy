@@ -13,6 +13,10 @@ Once published on maven central, Comfy can be added as a maven dependency in you
 
 ## Usage
 
+Comfy takes in two arguments, a path to the config file and an array of `Overrides` to load from the config. If no override is provided, then the lines with overrides are skipped.
+
+Please note that if duplicate override keys are provided, Comfy will return only the last loaded key.
+
 ```
 ComfyConfig config = Comfy.loadConfig("/path/to/config/file", new String[] { "override_1", "override_2" });
 ComfySection section = config.get("section_name");
@@ -27,6 +31,8 @@ String stringValue = config.get("section_name").getStringValue("string_key");
 Boolean booleanValue = config.get("section_name").getBooleanValue("boolean_key");
 String[] arrayValue = config.get("section_name").getArrayValue("array_key");
 ```
+
+These get methods throw `ClassCastException` if an invalid conversion is attempted. eg. when trying to retrieve a `BooleanValue` as `IntValue`.
 
 ## Running Comfy
 
